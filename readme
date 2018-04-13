@@ -6,3 +6,7 @@ Srinivas Suri
 Avinash Kurudi
 Arvind Mandyam
 
+
+As tweet's analysis is I/O extensive, we recommend to increase the I/O limit for the Jupyter Notebook:
+jupyter notebook --NotebookApp.iopub_data_rate_limit=1.0e10
+
