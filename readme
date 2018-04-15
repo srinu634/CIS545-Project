@@ -7,6 +7,13 @@ Avinash Kurudi
 Arvind Mandyam
 
 
-As tweet's analysis is I/O extensive, we recommend to increase the I/O limit for the Jupyter Notebook:
+Steps:
+
+1.) As tweet's analysis is I/O extensive, we recommend to increase the I/O limit for the Jupyter Notebook:
 jupyter notebook --NotebookApp.iopub_data_rate_limit=1.0e10
+
+2.) Upload the notebook and BigDataProject.ipynb and stopwords.txt to a jupyter notebook
+
+
+
 
