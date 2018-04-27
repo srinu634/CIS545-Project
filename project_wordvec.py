@@ -419,7 +419,7 @@ class BuildFeatureSet:
 
     def getFeatures(self):
         print ( len(self.data) )
-        features = np.zeros(( len(self.data), self.max_features_count ))
+        features = np.zeros(( len(self.data), 300 ))
         
         #features = np.array(list(self.data.values()))
         
@@ -622,23 +622,11 @@ noOfFeatures = [300]
 headers=['logreg_train','logreg_test','nb_train','nb_test','svm_train','svm_test','dt_train','dt_test','adaboost_train','adaboost_test'
         ,'rf_train','rf_test'] 
 results=[]
-
-#for featureLen in noOfFeatures:
-#    results = []
-#    for i in range(3):
-#        print( 'Generate results for ', i, '-gram Classifiers')
-#        clf = Classifiers(i+1,'stopwords.txt',files,0.75,featureLen)
-#        clf.runClassifiers()
-#        results.append( clf.getResults() )
     
-#    print( 'Results (features): (',featureLen,'):' )
-#    df = pd.DataFrame(results, columns=headers)
-#    print( df)
-    
-print ( 'Results After Performing PCA ')
+print ( 'Computing the results ')
 for featureLen in noOfFeatures:
     results = []
-    for i in range(3):
+    for i in range(1):
         print( 'Generate results for ith gram Classifiers')
         clf = Classifiers(i+1,'stopwords.txt',files,0.75,featureLen)
         #clf.applyPCA(100) #Keeping the top 20 important features
