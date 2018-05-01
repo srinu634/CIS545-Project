@@ -2,9 +2,9 @@ Sentiment Analysis using Twitter for Airlines
 Project for CIS 545 - Spring 2018 - University Of Pennsylvania
 
 Team Members:
-Srinivas Suri
-Avinash Kurudi
-Arvind Mandyam
+Srinivas Suri (surisr@seas.upenn.edu)
+Avinash Kurudi (avkurudi@seas.upenn.edu)
+Arvind Mandyam (arvindma@seas.upenn.edu)
 
 
 Steps:
@@ -13,6 +13,27 @@ Steps:
 jupyter notebook --NotebookApp.iopub_data_rate_limit=1.0e10
 
 2.) Upload the notebook and BigDataProject.ipynb and stopwords.txt to a jupyter notebook
+
+3.) To Download tweets, Use the following code snippet in the notebook after pullData Class Definition.
+
+import sys
+
+consumer_key = '' #Your Key
+consumer_secret = '' #Your secret
+maxTweets = 100000 #Some arbitrary large number
+tweetsPerQry = 100  #this is the max the API permits
+
+keys = keywords()
+words = keys.getKeyWords()  # this is what we're searching for
+
+pulldata = pullData(consumer_key,consumer_secret,maxTweets,tweetsPerQry,words)
+
+if ( pulldata.connect() == False ):
+    print ( "Connecting to the twitter API Failed")
+    sys.exit(1)
+pulldata.printParams()
+    
+pulldata.downloadData()
 
 
 
